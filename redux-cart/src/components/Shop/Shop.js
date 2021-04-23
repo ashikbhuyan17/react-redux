@@ -1,33 +1,39 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Product from '../Product/Product';
+import { addToCart } from '../redux/action/ÇartAction';
 
-const Shop = () => {
-    const products = [
-        {
-            name: "lenovo laptops ",
-            id: 1
-        },
-        {
-            name: "Asus laptops ",
-            id: 2
-        },
-        {
-            name: "Dell laptops ",
-            id: 3
-        },
-        {
-            name: "Hp laptops ",
-            id: 4
-        },
-    ]
+const Shop = (props) => {
+    console.log("props", props);
+    const { products, addToCart } = props
     return (
         <div>
             <h3>this is shop components</h3>
             {
-                products.map(pd => <Product product={pd} />)
+                props.products.map(pd =>
+                    < Product
+                        product={pd}
+                        addToCart={addToCart}
+                        key={pd.id}
+                    />)
             }
         </div>
     );
 };
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart,
+        products: state.products
+    }
+}
 
-export default Shop;
+const mapDispatchToProps = {
+    addToCart: addToCart,
+}
+
+// const connectToStore = connect(mapStateToProps, mapDispatchToProps)
+// // and that function returns the connected, wrapper component:
+// connectToStore(Shop)
+// connect(mapStateToProps, mapDispatchToProps)(Shop)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Shop);
