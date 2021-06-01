@@ -5,7 +5,7 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export const addToCart = id => {
     console.log(id);
     return { type: Add_TO_CART, id }
-} 
+}                
 
 
 export const removeFromCart = id => {
