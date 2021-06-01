@@ -14,13 +14,16 @@ const Counter = ({ increment, decrement, count }) => {
 };
 
 const mapStateToProps = (state) => ({
-    //state=store theke ja ja data ace ta amra pabo kintu eknae just counter er value drkar tay count: state.counterReducer.count
+    // redux store theke data niye asar jonno mapStateToProps use kora hoi
+    //state= redux store theke ja ja data ace ta amra pabo kintu eknae just counter er value drkar tay count: state.counterReducer.count
     // where counterReducer = combine reducer = index.js
-    count: state.counter.count
+    count: state.counterReducer.count
     // ekane je count er value paici ta amra props akare pabo
 });
 
+//export default connect(mapStateToProps, mapDispatchToProps)(containerName)
 export default connect(mapStateToProps, { increment, decrement })(Counter);
+
 //connect => short Keyword
 // export default connect(mapStateToProps, mapDispatchToProps)(containerName)
 
