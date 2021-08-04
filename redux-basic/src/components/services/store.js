@@ -13,7 +13,7 @@ import thunk from "redux-thunk";
 
 const store = createStore(
     reducers,
-    {}, //initialState => ey object er itor sokon array,object,data thabe
+    {}, //initialState => ey object er bitor  array,object,data thabe
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     composeWithDevTools(applyMiddleware(logger, thunk))
 );

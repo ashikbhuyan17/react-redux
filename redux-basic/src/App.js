@@ -7,8 +7,8 @@ import Users from './components/Users';
 function App() {
   return (
     <div className="App">
-      {/* <Counter />
-      <Counter2 /> */}
+      <Counter />
+      <Counter2 />
       <Users />
     </div>
   );

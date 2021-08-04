@@ -4,13 +4,13 @@ import { decrement, increment } from './services/actions/counterAction';
 
 
 const Counter2 = () => {
-    const count = useSelector(state => state.counterReducer.count) //useSelector function amader ke count value return korbe ja count variable e store korbo
+    const count = useSelector((state) => state.counterReducer.count) //useSelector function amader ke count value return korbe ja count variable e store korbo
     console.log(useSelector(state => state.counterReducer));
     // redux store er data gulu niye ase
     // The selector is approximately equivalent to the mapStateToProps argument to connect conceptually.
     //  The selector will be called with the entire Redux store state as its only argument.
     //const dispatch = useDispatch(function)// useDispatch ekta function niye thake
-    const dispatch = useDispatch()
+    const dispatch = useDispatch()  //dispatch ke actoin er modhe chure mara 
     return (
         <div>
             <h3>Count : {count}</h3>

@@ -10,3 +10,11 @@ export default combineReducers(
         userReducer
     }
 )
+
+// const CombineReducer = combineReducers(
+//     {
+//         counterReducer,
+//         userReducer
+//     }
+// )
+// export default CombineReducer
